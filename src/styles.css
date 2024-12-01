@@ -121,14 +121,35 @@ html {
     scroll-behavior: smooth;
 }
 
-#skills ul {
+#skills > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    list-style-type: disc;
+}
+
+#skills > ul > li {
+    margin-bottom: 8px;
+    padding-left: 5px;
 }
 
 #skills ul ul {
-    margin-left: 20px;
+    display: block;
+    margin-top: 4px;
+    margin-left: 25px;
     border-left: 2px solid #4895ef;
     padding-left: 15px;
+    grid-template-columns: 1fr;
+}
+
+#skills ul ul li {
+    margin-bottom: 2px;
+    list-style-type: circle;
+}
+
+@media (max-width: 768px) {
+    #skills ul ul {
+        margin-left: 15px;
+        padding-left: 10px;
+    }
 }
