@@ -53,7 +53,7 @@ nav a:hover {
 }
 
 a {
-    color: #4895ef;
+    color: #90e0ef;
     text-decoration: none;
     transition: color 0.3s;
     position: relative;
@@ -137,7 +137,7 @@ html {
     display: block;
     margin-top: 4px;
     margin-left: 25px;
-    border-left: 2px solid #4895ef;
+    /* border-left: 2px solid #4895ef; */
     padding-left: 15px;
     grid-template-columns: 1fr;
 }
