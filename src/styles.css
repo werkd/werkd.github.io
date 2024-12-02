@@ -1,30 +1,43 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --color-cream: #FFF0D1;
+    --color-brown-light: #795757;
+    --color-brown-medium: #664343;
+    --color-brown-dark: #3B3030;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     margin: 0 auto;
     padding: 30px;
     max-width: 800px;
-    background: linear-gradient(135deg, #001d3d 0%, #000814 100%);
-    color: #e9ecef;
+    background: linear-gradient(135deg, var(--color-brown-dark) 0%, var(--color-brown-medium) 100%);
+    color: var(--color-cream);
 }
 
 .section {
-    background-color: #0a2f5e;
+    background-color: var(--color-brown-light);
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #4895ef;
+    border: 1px solid rgba(255, 240, 209, 0.2);
+    backdrop-filter: blur(8px);
 }
 
 .section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 240, 209, 0.4);
 }
 
 nav {
-    background-color: #001d3d;
+    background-color: rgba(59, 48, 48, 0.95);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -36,26 +49,31 @@ nav {
     display: flex;
     justify-content: center;
     gap: 10px;
-    border: 1px solid #4895ef;
+    border: 1px solid rgba(255, 240, 209, 0.2);
 }
 
 nav a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     margin: 0 20px;
     padding: 8px 15px;
     border-radius: 4px;
     transition: background-color 0.3s;
-    color: #e9ecef;
+    color: var(--color-cream);
 }
 
 nav a:hover {
-    background-color: #4895ef;
-    color: #000814;
+    background-color: var(--color-cream);
+    color: var(--color-brown-dark);
+    transform: translateY(-2px);
 }
 
 a {
-    color: #90e0ef;
+    color: var(--color-cream);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: var(--transition-smooth);
     position: relative;
 }
 
@@ -66,7 +84,8 @@ a::after {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #4895ef;
+    background-color: var(--color-cream);
+    opacity: 0.8;
     transition: width 0.3s;
 }
 
@@ -75,7 +94,7 @@ a:hover::after {
 }
 
 a:hover {
-    color: #90e0ef;
+    color: var(--color-cream);
     text-decoration: underline;
 }
 
@@ -88,17 +107,24 @@ li {
 }
 
 .section h2, .section h3 {
-    color: #e9ecef;
-    border-bottom: 2px solid #4895ef;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--color-cream);
+    border-bottom: 2px solid rgba(255, 240, 209, 0.3);
     padding-bottom: 10px;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 footer {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     text-align: center;
     padding-top: 20px;
     margin-top: 30px;
-    border-top: 1px solid #4895ef;
+    border-top: 1px solid rgba(255, 240, 209, 0.2);
     color: #e9ecef;
 }
 
@@ -131,6 +157,8 @@ html {
 #skills > ul > li {
     margin-bottom: 8px;
     padding-left: 5px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
 }
 
 #skills ul ul {
@@ -145,6 +173,8 @@ html {
 #skills ul ul li {
     margin-bottom: 2px;
     list-style-type: circle;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
 @media (max-width: 768px) {
@@ -152,4 +182,72 @@ html {
         margin-left: 15px;
         padding-left: 10px;
     }
+}
+
+#skills a {
+    color: var(--color-cream);
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: linear-gradient(
+        to right,
+        rgba(121, 87, 87, 0.2) 0%,
+        rgba(121, 87, 87, 0.4) 100%
+    );
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+#skills a:hover {
+    color: var(--color-brown-dark);
+    background: var(--color-cream);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+#skills a::after {
+    display: none;
+}
+
+#skills > ul > li:nth-child(1) a {
+    background: linear-gradient(
+        to right,
+        rgba(255, 240, 209, 0.1) 0%,
+        rgba(121, 87, 87, 0.3) 100%
+    );
+}
+
+#skills > ul > li:nth-child(2) a {  
+    background: linear-gradient(
+        to right,
+        rgba(121, 87, 87, 0.3) 0%,
+        rgba(102, 67, 67, 0.3) 100%
+    );
+}
+
+#skills ul ul li a {  
+    background: linear-gradient(
+        to right,
+        rgba(59, 48, 48, 0.2) 0%,
+        rgba(121, 87, 87, 0.2) 100%
+    );
+}
+
+
+@keyframes linkGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 240, 209, 0);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 240, 209, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 240, 209, 0);
+    }
+}
+
+#skills a:hover {
+    animation: linkGlow 2s infinite;
 }
